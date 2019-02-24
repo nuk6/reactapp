@@ -1,6 +1,6 @@
 import React from 'react';
 import unsplash from  '../api/unsplash';
-require('./Home.css');
+require('./AllComp.css');
 class Home extends React.Component{
     constructor(props){
         super(props);
@@ -16,7 +16,7 @@ class Home extends React.Component{
         const  response = await unsplash.get('/search/photos', {
             params: {query: this.state.queryTerm},
         });
-        //console.log(response.data.results);
+        console.log(response.data.results);
         this.setState({images : response.data.results});
     };
     render() {
