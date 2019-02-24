@@ -1,6 +1,7 @@
 import React from 'react';
 import unsplash from '../api/unsplash';
 import * as constMsg from '../resources/properties/AllCompProperties';
+require('./AllComp.css');
 export default class SearchBar extends React.Component{
     state = {
         term : ''
