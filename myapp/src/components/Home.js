@@ -21,13 +21,18 @@ class Home extends React.Component{
         console.log(this.state.images);
     };
     render() {
-        let imageSrc = (this.state.images.length > 0)?(this.state.images[0].urls.small):'';
-        let image = <img src={imageSrc} alt='Image'/>
+        let imagesFetched = '';
+        if(this.state.images.length > 0){
+            let images = this.state.images;
+            imagesFetched = (images.map( im => {return (
+                <img src={im.urls.small} alt='Alt Image'/>
+            );}))
+        }
         return(
             <div className='app-container'>
                 <input type='text' onChange={this.handleChange} id='query-term'/>
                 <div id='submit' onClick={this.handleSubmit}>Click!</div>
-                {image}
+                {imagesFetched}
             </div>
         );
     }
