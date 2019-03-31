@@ -13,6 +13,7 @@ export default class SearchBar extends React.Component{
         const response = await unsplash.get('/search/photos',{
             params : {query : this.state.term}
         });
+
     };
     render(){
         return(
